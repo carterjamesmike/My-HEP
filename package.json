@@ -1,0 +1,27 @@
+{
+  "name": "my-hep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "scripts": {
+    "start": "node server/server.js --ignore client",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carterjamesmike/My-HEP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carterjamesmike/My-HEP/issues"
+  },
+  "homepage": "https://github.com/carterjamesmike/My-HEP#readme"
+}
