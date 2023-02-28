@@ -6,7 +6,7 @@ const typeDefs = gql`
     username: String!
     firstName: String
     lastName: String
-    password: Sting!
+    password: String!
     admin: Boolean
     exercises: [Exercise]
   }
@@ -21,13 +21,13 @@ const typeDefs = gql`
     user: [User]
   }
 
-  type ExerciseInput {
+  input ExerciseInput {
     name: String
     description: String
     totalDays: Int
     url: String
     notes: String
-    user: [User]
+    
   }
 
   type Mutation {
