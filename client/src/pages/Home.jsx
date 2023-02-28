@@ -29,9 +29,6 @@ const Home = () => {
         </div>
         <div className="pr-8 md:block hidden">
           <a href="#" className="p-4">
-            Home
-          </a>
-          <a href="#" className="p-4">
             About
           </a>
           <a href="#" className="p-4">
