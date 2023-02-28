@@ -29,13 +29,10 @@ const Home = () => {
         </div>
         <div className="pr-8 md:block hidden">
           <a href="#" className="p-4">
-            About
-          </a>
-          <a href="#" className="p-4">
-            Contact
-          </a>
-          <a href="#" className="p-4">
             Login
+          </a>
+          <a href="#" className="p-4">
+            My Profile
           </a>
         </div>
       </nav>
