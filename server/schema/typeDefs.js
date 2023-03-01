@@ -39,6 +39,9 @@ const typeDefs = gql`
 
   type Query {
     me: User
+    exercises: [Exercise]
+    exercise(exerciseId: ID!): Exercise
+
 }
 
   type Auth {
