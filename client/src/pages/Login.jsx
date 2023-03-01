@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import ReactDOM from 'react-dom/client';
+import Navbar from '../components/Navbar';
+
+
+function Login() {
+  const [inputs, setInputs] = useState({});
 
 import Auth from '../utils/auth';
 
@@ -23,6 +28,7 @@ import Auth from '../utils/auth';
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -55,6 +61,35 @@ const Login = (props) => {
 
 
   return (
+
+<div>
+  <Navbar />
+    <form onSubmit={handleSubmit}>
+      <label>Enter your username:
+      <input 
+        type="text" 
+        name="username" 
+        value={inputs.username || ""} 
+        onChange={handleChange}
+      />
+      </label>
+      <label>Enter your password:
+        <input 
+          type="text" 
+          name="password" 
+          value={inputs.password || ""} 
+          onChange={handleChange}
+        />
+        </label>
+        <input type="submit" />
+    </form>
+</div>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Login />);
+
     <main>
       <div>
         {data ? (
@@ -101,4 +136,3 @@ const Login = (props) => {
 // root.render(<Login />);
 
 export default Login;
-
