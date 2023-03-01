@@ -1,0 +1,29 @@
+[
+    {
+        "name": "push ups",
+        "description": "sample",
+        "totalDays": "",
+        "url": "sample",
+        "notes": "sample"
+    },
+    {
+        "name": "sit ups",
+        "description": "sample",
+        "totalDays": "",
+        "url": "sample",
+        "notes": "sample"
+    },
+    {
+        "name": "pull ups",
+        "description": "sample",
+        "totalDays": "",
+        "url": "sample",
+        "notes": "sample"
+    },{
+        "name": "curl ups",
+        "description": "sample",
+        "totalDays": "",
+        "url": "sample",
+        "notes": "sample"
+    }
+]
