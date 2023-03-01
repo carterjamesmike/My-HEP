@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import Navbar from '../components/Navbar';
 
-function LoginForm() {
+function Login() {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -16,6 +17,8 @@ function LoginForm() {
   } 
 
   return (
+<div>
+  <Navbar />
     <form onSubmit={handleSubmit}>
       <label>Enter your username:
       <input 
@@ -35,10 +38,11 @@ function LoginForm() {
         </label>
         <input type="submit" />
     </form>
+</div>
   )
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<LoginForm />);
+root.render(<Login />);
 
 export default Login;
