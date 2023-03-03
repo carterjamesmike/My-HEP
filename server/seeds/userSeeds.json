@@ -3,7 +3,8 @@
         "username": "userone" ,
         "firstName": "Connor" ,
         "lastName": "Getchell" ,
-        "password": "password1"
+        "password": "password1",
+        "admin": true
     },
     {
         "username": "usertwo",

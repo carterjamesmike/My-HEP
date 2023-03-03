@@ -1,7 +1,8 @@
-const { User } = require('../models/User');
-const { Exercise } = require('../models/Exercise');
+const { User } = require('../models');
+const { Exercise } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+
 const resolvers = {
 
     Query:{
@@ -16,6 +17,9 @@ const resolvers = {
                 return Profile.findOne({ _id: context.user._id });
               }
         },
+        users: async () => {
+            return User.find();
+        }
     },
 
     Mutation: {
