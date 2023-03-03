@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 const { User } = require('../models');
-const {Exercise} = require('../models')
+const { Exercise } = require('../models')
 const userSeeds = require('./userSeeds.json');
 const exerciseSeeds = require('./exerciseSeeds.json')
 
@@ -9,7 +9,7 @@ db.once('open', async () => {
     await User.deleteMany({});
     await Exercise.deleteMany({});
     await User.create(userSeeds);
-    await User.create(exerciseSeeds);
+    await Exercise.create(exerciseSeeds);
     console.log('all done!');
     process.exit(0);
   } catch (err) {
