@@ -12,7 +12,7 @@ const typeDefs = gql`
   }
 
   type Exercise {
-    exerciseId: String! 
+    _id: String! 
     name: String
     description: String
     totalDays: Int
@@ -40,8 +40,9 @@ const typeDefs = gql`
   type Query {
     me: User
     exercises: [Exercise]
-    exercise(exerciseId: ID!): Exercise
+    exercise(exerciseId: String!): Exercise
     users: [User]
+    user(userId: String!): User
 
 }
 
