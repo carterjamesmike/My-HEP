@@ -38,7 +38,7 @@ const resolvers = {
             return { token, user };
         },
 
-        addExercise: async (parent, {name, description, totalDays, url, notes }) =>{
+        saveExercise: async (parent, {name, description, totalDays, url, notes }) =>{
             const exercise = await Exercise.create({name, description, totalDays, url, notes });
             return {exercise}; 
         }
