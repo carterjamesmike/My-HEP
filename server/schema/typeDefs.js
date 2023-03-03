@@ -41,6 +41,7 @@ const typeDefs = gql`
     me: User
     exercises: [Exercise]
     exercise(exerciseId: ID!): Exercise
+    users: [User]
 
 }
 
