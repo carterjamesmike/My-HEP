@@ -29,7 +29,7 @@ const Navbar = () => {
       <a href="/Login" className="p-4">
         Login
       </a>
-      <a href="#" className="p-4">
+      <a href="/UserProfile" className="p-4">
         My Profile
       </a>
     </div>
