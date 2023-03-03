@@ -12,7 +12,7 @@ const typeDefs = gql`
   }
 
   type Exercise {
-    exerciseId: String! 
+    _id: ID
     name: String
     description: String
     totalDays: Int
