@@ -9,6 +9,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 import Home from './pages/Home'
 import Login from './pages/Login'
 import UserProfile from './pages/UserProfile'
@@ -16,7 +17,9 @@ import UserProfile from './pages/UserProfile'
 //Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
+  //uri: '/graphql',
 });
+
 
 //Construct request middleware that will attach the JWT token to an authorization header
 const authLink = setContext((_, { headers }) => {

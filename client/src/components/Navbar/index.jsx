@@ -6,7 +6,7 @@ const Navbar = () => {
     className="flex justify-between mb-2 items-center h-16 bg-white text-black relative shadow-sm font-mono"
     role="navigation"
   >
-    <a href="/Home" className="pl-8">
+    <a href="/" className="pl-8">
       Logo
     </a>
     <div className="px-4 cursor-pointer md:hidden">

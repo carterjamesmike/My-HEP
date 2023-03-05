@@ -23,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/carterjamesmike/My-HEP/issues"
   },
-  "homepage": "https://github.com/carterjamesmike/My-HEP#readme"
+  "homepage": "https://github.com/carterjamesmike/My-HEP#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^8.0.5",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.1",
+    "web-vitals": "^2.1.4"
+  }
 }
