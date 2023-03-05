@@ -16,8 +16,9 @@ import UserProfile from './pages/UserProfile'
 
 //Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+uri: 'http://localhost:3001/graphql',
   //uri: '/graphql',
+  //credentials: 'include'
 });
 
 
@@ -37,7 +38,8 @@ const authLink = setContext((_, { headers }) => {
 //Create our apollo client
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  //link,
 });
 
 
