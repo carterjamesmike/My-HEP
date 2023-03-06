@@ -1,5 +1,4 @@
-const { User } = require('../models');
-const { Exercise } = require('../models');
+const { User, Exercise } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -20,8 +19,8 @@ const resolvers = {
         users: async () => {
             return User.find();
         },
-        user: async (parent, {userId}) => {
-            return User.findOne({_id: userId});
+        user: async (parent, {username}) => {
+            return User.findOne({username});
         }
     },
 

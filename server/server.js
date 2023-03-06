@@ -9,7 +9,7 @@ const db = require('./config/connection');
 
 //Enable cors and options
 // const corsOptions = {
-//   origin: 'http://localhost:5173',
+//   origin: 'localhost:5173/Login',
 //   credentials: true,
 //   optionsSuccessStatus: 200
 // };
