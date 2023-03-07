@@ -6,7 +6,7 @@ const Signup = () => {
   return (
     <div>
       <Navbar />
-      <div className="flex justify-center items-center bg-blue-100 mt-2">
+      <div className="flex justify-center items-center h-screen bg-blue-100 mt-2">
         <div className="bg-white rounded shadow-2xl p-10">
           <h2 className="text-3xl font-bold mb-2 text-gray-800">Sign Up</h2>
 
