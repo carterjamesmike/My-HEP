@@ -1,8 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+import Auth from "../../utils/auth";
 
 const Navbar = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   return (
-    <div>
+    <div className="fixed w-full">
   <nav
     className="flex justify-between mb-2 items-center h-16 bg-white text-black shadow-sm font-mono"
     role="navigation"
@@ -27,14 +35,26 @@ const Navbar = () => {
         />
       </svg>
     </div>
-    <div className="pr-8 md:block hidden">
-      <a href="/Login" className="p-4">
-        Login
-      </a>
-      <a href="/Signup" className="p-4">
-        My Profile
-      </a>
-    </div>
+    {Auth.loggedIn() ? (
+      <>
+        <div className="pr-8 md:block hidden">
+          <a href="/UserProfile" className="p-4">
+            My Profile
+          </a>
+          <a href="/" onClick={logout} className="p-4">
+            Logout
+          </a>
+        </div>
+      </>
+    ) : (
+      <>
+        <div className="pr-8 md:block hidden">
+          <a href="/Login" className="p-4">
+            Login
+          </a>
+        </div>    
+      </>
+    )}
   </nav>
   </div>
   )

@@ -7,20 +7,6 @@ import Auth from "../utils/auth";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// function Login() {
-//   const [inputs, setInputs] = useState({});
-
-//   const handleChange = (event) => {
-//     const name = event.target.name;
-//     const value = event.target.value;
-//     setInputs(values => ({...values, [name]: value}))
-//   }
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     alert(inputs);
-//   }
-
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);

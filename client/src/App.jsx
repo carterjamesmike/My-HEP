@@ -64,6 +64,10 @@ function App() {
             path="/UserProfile" 
             element={<UserProfile />}
             />
+            <Route
+              path="/Me"
+              element={<UserProfile />}
+            />
             <Route 
             path="/Signup" 
             element={<Signup />}
