@@ -48,6 +48,25 @@ const resolvers = {
         saveExercise: async (parent, {name, description, totalDays, url, notes }) =>{
             const exercise = await Exercise.create({name, description, totalDays, url, notes });
             return {exercise}; 
+        },
+        addExercise: async (parent ,{userId, exercise}) => {
+           const exerciseData = await Exercise.findById(exercise);
+            return await User.findByIdAndUpdate(
+                userId,
+                {$addToSet:{exercises: exerciseData }},
+                {
+                            new: true,
+                            runValidators: true,
+                        }
+            )
+            // // return User.findOneAndUpdate(
+            //     {_id: userId },
+            //     {$addToSet: {exercises: Exercise.findById(exercise)}},
+            //     {
+            //         new: true,
+            //         runValidators: true
+            //     }
+          //  );
         }
     }
 
