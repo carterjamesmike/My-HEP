@@ -11,13 +11,12 @@ const Navbar = () => {
 
   return (
     <div>
-  <nav
-    className="flex justify-between mb-2 items-center h-16 bg-white text-black shadow-sm font-mono"
-    role="navigation"
-  >
+      <nav className="flex justify-between mb-2 items-center h-16 bg-white text-black shadow-sm font-mono" role="navigation"
+>
     <a href="/" className="pl-8">
       Logo
     </a>
+
     <div className="px-4 cursor-pointer md:hidden">
       <svg
         className="w-6 h-6"
@@ -51,9 +50,6 @@ const Navbar = () => {
           <a href="/Login" className="p-4">
             Login
           </a>
-      {/* <a href="/UserProfile" className="p-4">
-        My Profile
-      </a> */}
         </div>    
       </>
     )}
