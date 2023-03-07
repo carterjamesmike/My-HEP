@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 
 const CreatePatient = () => {
   return (
@@ -57,6 +59,7 @@ const CreatePatient = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

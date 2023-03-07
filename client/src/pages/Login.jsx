@@ -5,6 +5,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import ReactDOM from "react-dom/client";
 import Auth from "../utils/auth";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // function Login() {
 //   const [inputs, setInputs] = useState({});
@@ -105,6 +106,7 @@ const Login = (props) => {
           {error && <div>{error.message}</div>}
         </div>
       </div>
+      <Footer />
     </main>
   );
 };

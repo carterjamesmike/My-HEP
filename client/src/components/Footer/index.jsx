@@ -13,6 +13,9 @@ const Footer = () => {
       <a href="/Home" className="p-4">
         Home
       </a>
+      <a href="/Login" className="p-4">
+        Login
+      </a>
       <a href="/Signup" className="p-4">
         My Profile
       </a>
