@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server/server.js --ignore client",
-    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm dev\"",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
@@ -24,4 +24,5 @@
     "url": "https://github.com/carterjamesmike/My-HEP/issues"
   },
   "homepage": "https://github.com/carterjamesmike/My-HEP#readme"
+
 }
