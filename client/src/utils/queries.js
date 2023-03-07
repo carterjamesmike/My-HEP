@@ -35,7 +35,7 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_SINGLE_EXERCISE = gql`
-    query getSingleExercise($exerciseId: ID!) {
+    query getSingleExercise($exerciseId: String) {
         exercise(exerciseId: $exerciseId) {
             _id
             name
@@ -51,3 +51,19 @@ export const QUERY_SINGLE_EXERCISE = gql`
     }
 `;
 
+export const QUERY_SINGLE_USER = gql`
+    query getSingleUser($userId: String) {
+        user(userId: $userId) {
+            _id
+            username
+            exercises {
+                _id
+                name
+                description
+                totalDays
+                url
+                notes
+            }
+        }
+    }
+`;

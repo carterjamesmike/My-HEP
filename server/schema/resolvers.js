@@ -1,7 +1,7 @@
-const { User } = require('../models/User');
-const { Exercise } = require('../models/Exercise');
+const { User, Exercise } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+
 const resolvers = {
 
     Query:{
@@ -13,9 +13,15 @@ const resolvers = {
         },
         me: async(parent, args, context) =>{
             if (context.user) {
-                return Profile.findOne({ _id: context.user._id });
+                return User.findOne({ _id: context.user._id });
               }
         },
+        users: async () => {
+            return User.find();
+        },
+        user: async (parent, {username}) => {
+            return User.findOne({username});
+        }
     },
 
     Mutation: {
@@ -25,7 +31,7 @@ const resolvers = {
             return { token, user};
         },
         login: async (parent, {username, password}) => {
-            const user = await User.findone({username});
+            const user = await User.findOne({username});
             if(!user) {
                 throw new AuthenticationError('username not found');
             }
@@ -38,7 +44,7 @@ const resolvers = {
             return { token, user };
         },
 
-        addExercise: async (parent, {name, description, totalDays, url, notes }) =>{
+        saveExercise: async (parent, {name, description, totalDays, url, notes }) =>{
             const exercise = await Exercise.create({name, description, totalDays, url, notes });
             return {exercise}; 
         }
