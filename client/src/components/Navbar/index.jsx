@@ -7,9 +7,10 @@ const Navbar = () => {
     className="flex justify-between mb-2 items-center h-16 bg-white text-black shadow-sm font-mono"
     role="navigation"
   >
-    <a href="/" className="pl-8">
-      Logo
+     <a href="/" className="pl-8">
+      <img className="scale-50" src="./images/myHepLogo2.png" alt="myhep logo" />
     </a>
+
     <div className="px-4 cursor-pointer md:hidden">
       <svg
         className="w-6 h-6"

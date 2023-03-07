@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const AdminProfile = () => {
   return (
@@ -38,6 +39,7 @@ const AdminProfile = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

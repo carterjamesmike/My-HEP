@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const CreateExercise = () => {
   return (
@@ -72,6 +73,7 @@ const CreateExercise = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

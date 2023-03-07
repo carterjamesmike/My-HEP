@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -13,7 +14,9 @@ const Home = () => {
             <p>Be sure to buy our merch!</p>
           </p>
         </div>
+       
       </div>
+      <Footer />
     </div>
   );
 };
