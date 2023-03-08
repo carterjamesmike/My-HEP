@@ -5,20 +5,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import ReactDOM from "react-dom/client";
 import Auth from "../utils/auth";
 import Navbar from "../components/Navbar";
-
-// function Login() {
-//   const [inputs, setInputs] = useState({});
-
-//   const handleChange = (event) => {
-//     const name = event.target.name;
-//     const value = event.target.value;
-//     setInputs(values => ({...values, [name]: value}))
-//   }
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     alert(inputs);
-//   }
+import Footer from "../components/Footer";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: "", password: "" });
@@ -57,7 +44,7 @@ const Login = (props) => {
       <Navbar />
       <div className="flex justify-center items-center h-screen bg-blue-100">
         <div className="bg-white rounded shadow-2xl p-10">
-          <h2 className="text-3xl font-bold mb-2 text-gray-800">Login</h2>
+          <h2 className="text-3xl font-bold mb-2">Login</h2>
           {data ? (
             <p>
               Success! You may now head{" "}
@@ -95,7 +82,7 @@ const Login = (props) => {
 
               <div className="flex justify-center items-center mt-6">
                 <button
-                  className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
+                  className={`bg-button py-2 px-4 text-sm text-white rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
                 >
                   Submit
                 </button>
@@ -105,6 +92,7 @@ const Login = (props) => {
           {error && <div>{error.message}</div>}
         </div>
       </div>
+      <Footer />
     </main>
   );
 };

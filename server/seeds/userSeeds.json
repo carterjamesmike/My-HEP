@@ -1,14 +1,17 @@
 [
     {
         "username": "admin" ,
+        "username": "admin" ,
         "firstName": "Connor" ,
         "lastName": "Getchell" ,
+        "password": "password1"
         "password": "password1"
     },
     {
         "username": "usertwo",
         "firstName": "James",
         "lastName": "Carter",
+        "password": "password2"
         "password": "password2"
     },
     {
@@ -19,7 +22,7 @@
 
     },
     {
-        "username": "userfour",
+        "username": "userfour", 
         "firstName": "Seth",
         "lastName": "Daulton",
         "password": "password4"

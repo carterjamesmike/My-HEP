@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 const AdminProfile = () => {
@@ -22,11 +23,11 @@ const AdminProfile = () => {
           </div>
           <div className="flex justify-center items-center mt-6">
             <a href="/CreatePatient">
-            <button
-              className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
-            >
-              Create Patient Profile
-            </button>
+              <button
+                className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
+              >
+                Create Patient Profile
+              </button>
             </a>
           </div>
           <div className="flex justify-center items-center mt-6">
@@ -38,6 +39,7 @@ const AdminProfile = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
