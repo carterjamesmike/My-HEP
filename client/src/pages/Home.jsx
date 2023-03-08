@@ -14,7 +14,6 @@ const Home = () => {
             <p>Custom exercises and routines</p>
           </div>
         </div>
-       
       </div>
       <Footer />
     </div>
