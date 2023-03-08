@@ -1,11 +1,13 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const CreateExercise = () => {
   return (
-    <div>
+    <main>
       <Navbar />
-      <div className="flex justify-center items-center bg-blue-100 mt-2">
+      <div>
+      <div className="flex justify-center items-center h-screen bg-blue-100 mt-2">
         <div className="bg-white rounded shadow-2xl p-10">
           <h2 className="text-3xl font-bold mb-2 text-gray-800">
             Create Excercise
@@ -72,7 +74,9 @@ const CreateExercise = () => {
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+      </div>
+    </main>
   );
 };
 

@@ -5,20 +5,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import ReactDOM from "react-dom/client";
 import Auth from "../utils/auth";
 import Navbar from "../components/Navbar";
-
-// function Login() {
-//   const [inputs, setInputs] = useState({});
-
-//   const handleChange = (event) => {
-//     const name = event.target.name;
-//     const value = event.target.value;
-//     setInputs(values => ({...values, [name]: value}))
-//   }
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-//     alert(inputs);
-//   }
+import Footer from "../components/Footer";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ username: "", password: "" });
@@ -105,6 +92,7 @@ const Login = (props) => {
           {error && <div>{error.message}</div>}
         </div>
       </div>
+      <Footer />
     </main>
   );
 };

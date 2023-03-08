@@ -1,5 +1,4 @@
-const { User } = require('../models');
-const { Exercise } = require('../models');
+const { User, Exercise } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -35,7 +34,7 @@ const resolvers = {
             return { token, user};
         },
         login: async (parent, {username, password}) => {
-            const user = await User.findone({username});
+            const user = await User.findOne({username});
             if(!user) {
                 throw new AuthenticationError('username not found');
             }
