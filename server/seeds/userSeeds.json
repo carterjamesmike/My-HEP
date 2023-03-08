@@ -16,11 +16,13 @@
         "firstName": "Skipper",
         "lastName": "Thurman",
         "password": "password3"
+
     },
     {
         "username": "userfour", 
         "firstName": "Seth",
         "lastName": "Daulton",
         "password": "password4"
+
     }
 ]

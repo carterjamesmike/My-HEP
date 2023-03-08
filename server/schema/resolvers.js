@@ -13,14 +13,17 @@ const resolvers = {
         },
         me: async(parent, args, context) =>{
             if (context.user) {
-                return User.findOne({ _id: context.user._id });
+                return User.findOne({ _id: context.user._id })
+                
               }
         },
         users: async () => {
-            return User.find();
+            return User.find()
+            .populate({ path: 'exercises', select: '-__v' }); 
         },
-        user: async (parent, {username}) => {
-            return User.findOne({username});
+        user: async (parent, {userId}) => {
+            return User.findOne({_id: userId})
+            .populate({ path: 'exercises', select: '-__v' }); 
         }
     },
 
@@ -50,6 +53,7 @@ const resolvers = {
         },
         addExercise: async (parent ,{userId, exercise}) => {
            const exerciseData = await Exercise.findById(exercise);
+
             return await User.findByIdAndUpdate(
                 userId,
                 {$addToSet:{exercises: exerciseData }},
@@ -71,5 +75,6 @@ const resolvers = {
 
 
 }
+};
 
 module.exports = resolvers;
