@@ -63,27 +63,36 @@ const UserProfile = () => {
                   </button>
                 </a>
               </div>
+              <div className="flex justify-center items-center mt-6">
+                <a href="/AddExercise">
+                  <button
+                    className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
+                  >
+                    Add Exercise
+                  </button>
+                </a>
+              </div>
               <div className="flex justify-center items-center mt-6"></div>
             </div>
           </div>
         ) : (
           <div className="flex justify-center items-center h-screen bg-blue-100">
-          <div className="bg-white rounded shadow-2xl p-10">
-            <h2 className="text-3xl font-bold mb-2 text-gray-800">
-              User Profile
-            </h2>
-            <div className="flex justify-center items-center mt-6">
-              <a href="/Exercise">
-                <button
-                  className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
-                >
-                  Exercise
-                </button>
-              </a>
+            <div className="bg-white rounded shadow-2xl p-10">
+              <h2 className="text-3xl font-bold mb-2 text-gray-800">
+                User Profile
+              </h2>
+              <div className="flex justify-center items-center mt-6">
+                <a href="/Exercise">
+                  <button
+                    className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
+                  >
+                    Exercise
+                  </button>
+                </a>
+              </div>
+              <div className="flex justify-center items-center mt-6"></div>
             </div>
-            <div className="flex justify-center items-center mt-6"></div>
           </div>
-        </div>
         )}
         <Footer />
       </div>
@@ -92,4 +101,3 @@ const UserProfile = () => {
 };
 
 export default UserProfile;
-
