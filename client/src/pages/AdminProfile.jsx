@@ -1,3 +1,8 @@
+// ------------------------------------------------------|
+// NOTE: THIS PAGE IS NOT USED
+// THIS DATA IS USED IN THE USER PROFILE FOR THE ADMIN
+// ------------------------------------------------------|
+
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -13,6 +18,15 @@ const AdminProfile = () => {
             Admin Profile
           </h2>
           <div className="flex justify-center items-center mt-6">
+            <a href="/CreatePatient">
+              <button
+                className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
+              >
+                Create Patient Profile
+              </button>
+            </a>
+          </div>
+          <div className="flex justify-center items-center mt-6">
             <a href="/CreateExercise">
               <button
                 className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
@@ -22,11 +36,11 @@ const AdminProfile = () => {
             </a>
           </div>
           <div className="flex justify-center items-center mt-6">
-            <a href="/CreatePatient">
+            <a href="/AddExercise">
               <button
                 className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
               >
-                Create Patient Profile
+                Add Exercise
               </button>
             </a>
           </div>

@@ -18,12 +18,14 @@ const resolvers = {
               }
         },
         users: async () => {
+
             return User.find()
             .populate({ path: 'exercises', select: '-__v' }); 
         },
         user: async (parent, {userId}) => {
             return User.findOne({_id: userId})
             .populate({ path: 'exercises', select: '-__v' }); 
+
         }
     },
 
