@@ -35,7 +35,7 @@ const typeDefs = gql`
     addUser(username: String!, firstName: String, lastName: String, password: String): Auth
     saveExercise(input: ExerciseInput!): User
     removeExercise(ExerciseId: String!): User
-    addExercise(userId: ID!, exercise: ID!): Exercise
+    addExercise(userId: ID!, exercise: ID!): User
   }
 
   type Query {

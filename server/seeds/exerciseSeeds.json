@@ -3,27 +3,28 @@
         "name": "Super Streches",
         "description": "Get Some!",
         "totalDays": "1",
-        "url": "https://www.youtube.com/watch?v=megGOXIJBEE&t=22s",
+        "url": "megGOXIJBEE",
         "notes": "It's good for you. I swear"
     },
     {
         "name": "Turtle Pose",
         "description": "Crawl on floor with laundry basket on back.",
         "totalDays": "3",
-        "url": "https://www.youtube.com/watch?v=J---aiyznGQ",
+        "url": "J---aiyznGQ",
         "notes": "Have fun"
     },
     {
         "name": "Wall Sits",
         "description": "Butt on wall",
         "totalDays": "2",
-        "url": "https://www.youtube.com/watch?v=CMNry4PE93Y&list=PLUNigHjL4wlGV1CaxdCLPJCQiUXLfpG9y&index=8",
+        "url": "CMNry4PE93Y",
         "notes": "Don't fall over"
-    },{
+    },
+    {
         "name": "Contemplation",
         "description": "What does it all mean?",
         "totalDays": "4",
-        "url": "https://www.youtube.com/watch?v=OQSNhk5ICTI&list=PLUNigHjL4wlGV1CaxdCLPJCQiUXLfpG9y&index=3",
+        "url": "OQSNhk5ICTI",
         "notes": "Can be done in the bathroom"
     }
 ]

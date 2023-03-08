@@ -56,12 +56,13 @@ function App() {
             <Route path="/AdminProfile" element={<AdminProfile />} />
             <Route path="/CreateExercise" element={<CreateExercise />} />
             <Route path="/CreatePatient" element={<CreatePatient />} />
-            <Route path="/Exercise" element={<Exercise />} />
+            <Route path="/Exercise/:exerciseId" element={<Exercise />} />
             <Route path="/" element={<Home />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/UserProfile" element={<UserProfile />} />
             <Route path="/Me" element={<UserProfile />} />
+
           </Routes>
         </div>
       </Router>
