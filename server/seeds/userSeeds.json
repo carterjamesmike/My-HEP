@@ -3,29 +3,24 @@
         "username": "admin" ,
         "firstName": "Connor" ,
         "lastName": "Getchell" ,
-        "password": "password1",
-        "exercises": ["push ups","sit ups"],
-        "admin": true
+        "password": "password1"
     },
     {
         "username": "usertwo",
         "firstName": "James",
         "lastName": "Carter",
-        "password": "password2",
-        "exercises": ["pull ups","push ups"]
+        "password": "password2"
     },
     {
         "username": "userthree",
         "firstName": "Skipper",
         "lastName": "Thurman",
-        "password": "password3",
-        "exercises": ["curl ups","sit ups"]
+        "password": "password3"
     },
     {
         "username": "userfour", 
         "firstName": "Seth",
         "lastName": "Daulton",
-        "password": "password4",
-        "exercises": ["sit ups","pull ups"]
+        "password": "password4"
     }
 ]
