@@ -6,7 +6,8 @@ const resolvers = {
 
     Query:{
         exercises: async () => {
-            return Exercise.find();
+            const exercises = await Exercise.find({});
+            return exercises
         },
         exercise: async (parent, {exerciseId}) => {
             return Exercise.findOne({_id: exerciseId})
@@ -30,11 +31,13 @@ const resolvers = {
     },
 
     Mutation: {
+        //Creates a user
         addUser: async (parent,{ username, firstName, lastName, password }) =>{
             const user = await User.create({username, firstName, lastName, password});
             const token = signToken(user);
             return { token, user};
         },
+        //Logs in a user
         login: async (parent, {username, password}) => {
             const user = await User.findOne({username});
             if(!user) {
@@ -49,10 +52,13 @@ const resolvers = {
             return { token, user };
         },
 
+
         saveExercise: async (parent, args) =>{
             const exercise = await Exercise.create(args.input);
             return exercise; 
         },
+
+        //Assigns an exercise to a user
         addExercise: async (parent ,{userId, exercise}) => {
            const exerciseData = await Exercise.findById(exercise);
            console.log(exerciseData);

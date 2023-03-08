@@ -68,7 +68,7 @@ const UserProfile = () => {
                   <button
                     className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
                   >
-                    Add Exercise
+                    Assign Exercise
                   </button>
                 </a>
               </div>
