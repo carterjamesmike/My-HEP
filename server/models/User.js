@@ -24,10 +24,6 @@ const userSchema = new Schema({
         trim: true,
         minlength: 5
     },
-    admin: {
-        type: Boolean,
-        default: false
-    },
     exercises: [
         {
             type: Schema.Types.ObjectId,

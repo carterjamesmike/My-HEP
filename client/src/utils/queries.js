@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_EXERCISES = gql`
-    query getExercises {
+query getExercises {
         exercises {
             _id
             name
@@ -16,6 +16,26 @@ export const QUERY_EXERCISES = gql`
         }
     }
 `;
+
+export const QUERY_USERS = gql`
+    query getUsers {
+        users {
+            _id
+            username
+            firstName
+            lastName
+            exercises {
+                _id
+                name
+                description
+                totalDays
+                url
+                notes
+            }
+        }
+    }
+`;
+
 
 export const QUERY_USER = gql`
     query getUser($username: String!) {
