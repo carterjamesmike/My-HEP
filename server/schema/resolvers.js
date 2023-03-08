@@ -13,14 +13,19 @@ const resolvers = {
         },
         me: async(parent, args, context) =>{
             if (context.user) {
-                return User.findOne({ _id: context.user._id });
+                return User.findOne({ _id: context.user._id })
+                
               }
         },
         users: async () => {
-            return User.find().populate('exercises');
+
+            return User.find()
+            .populate({ path: 'exercises', select: '-__v' }); 
         },
-        user: async (parent, {username}) => {
-            return User.findOne({username}).populate('exercises');
+        user: async (parent, {userId}) => {
+            return User.findOne({_id: userId})
+            .populate({ path: 'exercises', select: '-__v' }); 
+
         }
     },
 
@@ -44,12 +49,13 @@ const resolvers = {
             return { token, user };
         },
 
-        saveExercise: async (parent, {name, description, totalDays, url, notes }) =>{
-            const exercise = await Exercise.create({name, description, totalDays, url, notes });
-            return {exercise}; 
+        saveExercise: async (parent, args) =>{
+            const exercise = await Exercise.create(args.input);
+            return exercise; 
         },
         addExercise: async (parent ,{userId, exercise}) => {
            const exerciseData = await Exercise.findById(exercise);
+           console.log(exerciseData);
             return await User.findByIdAndUpdate(
                 userId,
                 {$addToSet:{exercises: exerciseData }},
@@ -57,7 +63,7 @@ const resolvers = {
                             new: true,
                             runValidators: true,
                         }
-            )
+            );
             // // return User.findOneAndUpdate(
             //     {_id: userId },
             //     {$addToSet: {exercises: Exercise.findById(exercise)}},
@@ -66,10 +72,8 @@ const resolvers = {
             //         runValidators: true
             //     }
           //  );
-        }
-    }
-
-
+        },
 }
+};
 
 module.exports = resolvers;
