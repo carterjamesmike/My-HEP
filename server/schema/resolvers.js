@@ -53,7 +53,7 @@ const resolvers = {
         },
         addExercise: async (parent ,{userId, exercise}) => {
            const exerciseData = await Exercise.findById(exercise);
-           console.log(exerciseData);
+
             return await User.findByIdAndUpdate(
                 userId,
                 {$addToSet:{exercises: exerciseData }},
@@ -61,7 +61,7 @@ const resolvers = {
                             new: true,
                             runValidators: true,
                         }
-            );
+            )
             // // return User.findOneAndUpdate(
             //     {_id: userId },
             //     {$addToSet: {exercises: Exercise.findById(exercise)}},
@@ -70,20 +70,8 @@ const resolvers = {
             //         runValidators: true
             //     }
           //  );
-        },
-        addExerciseToUser: async (parent, {userId, exerciseId}) => {
-            const user = await User.findOneAndUpdate(
-                {_id: userId},
-                {$addToSet: {exercises: exerciseId}},
-                {
-                    new: true,
-                    runValidators: true
-                }
-            );
-            return user;
-
-    },
-
+        }
+    }
 
 
 }
