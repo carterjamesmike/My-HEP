@@ -97,13 +97,10 @@ const UserProfile = () => {
                     {user.exercises[0].name}
                   </button>
                 </a> */}
-                <a href="/Exercise">
-                  <button
-                    className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
-                  >
-                    {user.exercises[1].name}
-                  </button>
-                </a>
+              <Link
+              className="bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5"
+              to={`/exercise/${user.exercises[1]._id}`}
+              >{user.exercises[1].name}</Link>
               </div>
 
               <div className="flex justify-center items-center mt-6"></div>
