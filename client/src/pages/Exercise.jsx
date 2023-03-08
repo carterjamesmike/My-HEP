@@ -4,69 +4,35 @@ import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import { QUERY_SINGLE_EXERCISE } from "../utils/queries";
 
-import Auth from "../utils/auth";
 
 const Exercise = () => {
-  const { username: userParam } = useParams();
+  
 
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { username: userParam },
+  const { exerciseId } = useParams();
+  const { loading, data } = useQuery(QUERY_SINGLE_EXERCISE, {
+    variables: { exerciseId: exerciseId },
   });
 
-  const user = data?.me || data?.user || {};
+  const exercise = data?.exercise || {};
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
-    return (
-      <h4>
-        You need to be logged in to see this. Use the navigation links above to
-        sign up or log in!
-      </h4>
-    );
-  }
-console.log(user)
+  const videoId = exercise.url;
+  const src = `https://www.youtube.com/embed/${videoId}`;  
+  console.log(exerciseId)
+  console.log(videoId)
   return (
     <main>
       <Navbar />
       <div>
-        {user?.username === "admin" ? (
-          <div className="flex justify-center items-center h-screen bg-blue-100">
-            <div className="bg-white rounded shadow-2xl p-10">
-              <h2 className="text-3xl font-bold mb-2 text-gray-800">
-                Admin Profile
-              </h2>
-              <div className="flex justify-center items-center mt-6">
-                <a href="/CreateExercise">
-                  <button
-                    className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
-                  >
-                    Create Excercise
-                  </button>
-                </a>
-              </div>
-              <div className="flex justify-center items-center mt-6">
-                <a href="/CreatePatient">
-                  <button
-                    className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
-                  >
-                    Create Patient Profile
-                  </button>
-                </a>
-              </div>
-              <div className="flex justify-center items-center mt-6"></div>
-            </div>
-          </div>
-        ) : (
+       
           <div className="flex justify-center items-center bg-blue-100 mt-2">
             <div className="bg-white rounded shadow-2xl p-10">
-              <h2 className="text-3xl font-bold mb-2 text-gray-800">
-                Welcome {user.firstName} {user.lastName}!
-              </h2>
+              <h2>{exercise.name}</h2>
 
               <p className="text-gray-600"> </p>
 
@@ -77,7 +43,7 @@ console.log(user)
                 <iframe
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/g_tea8ZNk5A"
+                  src={src}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -85,28 +51,19 @@ console.log(user)
                 ></iframe>
               </div>
               <p className="max-w-md mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a
-                ullamcorper risus, id placerat justo. Etiam rutrum in nunc ut
-                imperdiet. Praesent ac justo vestibulum ipsum malesuada molestie
-                a eu risus. Maecenas mattis sed sapien vel malesuada. Aenean
-                maximus tristique neque, id faucibus nulla vehicula bibendum.
-                Sed finibus fermentum turpis ac consequat. Nulla id erat in orci
-                efficitur lobortis vitae id urna. Aliquam eros nisi, sodales id
-                interdum in, tempor sed diam. Etiam tristique facilisis ante ut
-                ornare. Praesent sagittis neque dui, a gravida mi pretium in.
-                Etiam tincidunt pellentesque elit. Fusce dapibus venenatis
-                egestas. Nunc metus magna, tincidunt id dui a, rhoncus luctus
-                felis. Morbi suscipit, tellus non commodo condimentum, sapien
-                nisi eleifend justo, quis laoreet metus neque eget nulla. Nullam
-                laoreet laoreet ornare. Donec dui nulla, dictum vitae interdum
-                nec, fermentum ut libero. Nam laoreet metus sem, ac hendrerit
-                dolor pulvinar a. Nulla euismod dapibus risus eu ullamcorper.
-                Phasellus eget purus interdum, posuere purus ut, vulputate nunc.
+                <h2>Description of exercise</h2>
+                {exercise.description}
               </p>
-              <div></div>
+              <p className="max-w-md mx-auto">
+                <h2>Total day to perform</h2>
+                {exercise.totalDays}
+              </p>
+              <p className="max-w-md mx-auto">
+                <h2>Other notes</h2>
+                {exercise.notes}
+              </p>
             </div>
           </div>
-        )}
         <Footer />
       </div>
     </main>

@@ -28,7 +28,7 @@ export const exerciseData = [
         name: "Contemplation",
         description: "What does it all mean?",
         totalDays: "4",
-        url: "https://www.youtube.com/watch?v=OQSNhk5ICTI&list=PLUNigHjL4wlGV1CaxdCLPJCQiUXLfpG9y&index=3",
+        url: `<iframe width="560" height="315" src="https://www.youtube.com/embed/OQSNhk5ICTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
         notes: "Can be done in the bathroom"
     }
 

@@ -55,7 +55,7 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_SINGLE_EXERCISE = gql`
-    query getSingleExercise($exerciseId: String) {
+    query getSingleExercise($exerciseId: String!) {
         exercise(exerciseId: $exerciseId) {
             _id
             name
