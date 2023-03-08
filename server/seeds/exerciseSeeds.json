@@ -1,29 +1,29 @@
 [
     {
-        "name": "push ups",
-        "description": "sample",
+        "name": "Super Streches",
+        "description": "Get Some!",
         "totalDays": "1",
-        "url": "sample",
-        "notes": "sample"
+        "url": "https://www.youtube.com/watch?v=megGOXIJBEE&t=22s",
+        "notes": "It's good for you. I swear"
     },
     {
-        "name": "sit ups",
-        "description": "sample",
-        "totalDays": "1",
-        "url": "sample",
-        "notes": "sample"
+        "name": "Turtle Pose",
+        "description": "Crawl on floor with laundry basket on back.",
+        "totalDays": "3",
+        "url": "https://www.youtube.com/watch?v=J---aiyznGQ",
+        "notes": "Have fun"
     },
     {
-        "name": "pull ups",
-        "description": "sample",
-        "totalDays": "1",
-        "url": "sample",
-        "notes": "sample"
+        "name": "Wall Sits",
+        "description": "Butt on wall",
+        "totalDays": "2",
+        "url": "https://www.youtube.com/watch?v=CMNry4PE93Y&list=PLUNigHjL4wlGV1CaxdCLPJCQiUXLfpG9y&index=8",
+        "notes": "Don't fall over"
     },{
-        "name": "curl ups",
-        "description": "sample",
-        "totalDays": "1",
-        "url": "sample",
-        "notes": "sample"
+        "name": "Contemplation",
+        "description": "What does it all mean?",
+        "totalDays": "4",
+        "url": "https://www.youtube.com/watch?v=OQSNhk5ICTI&list=PLUNigHjL4wlGV1CaxdCLPJCQiUXLfpG9y&index=3",
+        "notes": "Can be done in the bathroom"
     }
 ]
