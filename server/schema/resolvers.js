@@ -71,10 +71,23 @@ const resolvers = {
             //         runValidators: true
             //     }
           //  );
-        }
-    }
+        },
+        addExerciseToUser: async (parent, {userId, exerciseId}) => {
+            const user = await User.findOneAndUpdate(
+                {_id: userId},
+                {$addToSet: {exercises: exerciseId}},
+                {
+                    new: true,
+                    runValidators: true
+                }
+            );
+            return user;
+
+    },
+
 
 
 }
+};
 
 module.exports = resolvers;
