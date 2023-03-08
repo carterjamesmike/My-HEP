@@ -3,8 +3,7 @@
         "username": "admin" ,
         "firstName": "Connor" ,
         "lastName": "Getchell" ,
-        "password": "password1",
-        "admin": true
+        "password": "password1"
     },
     {
         "username": "usertwo",
@@ -19,7 +18,7 @@
         "password": "password3"
     },
     {
-        "username": "userfour",
+        "username": "userfour", 
         "firstName": "Seth",
         "lastName": "Daulton",
         "password": "password4"
