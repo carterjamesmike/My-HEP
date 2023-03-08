@@ -18,10 +18,10 @@ const resolvers = {
               }
         },
         users: async () => {
-            return User.find();
+            return User.find().populate('exercises');
         },
         user: async (parent, {userId}) => {
-            return User.findOne({_id: userId});
+            return User.findOne({_id: userId}).populate('exercises');
         }
     },
 
@@ -67,10 +67,23 @@ const resolvers = {
             //         runValidators: true
             //     }
           //  );
-        }
-    }
+        },
+        addExerciseToUser: async (parent, {userId, exerciseId}) => {
+            const user = await User.findOneAndUpdate(
+                {_id: userId},
+                {$addToSet: {exercises: exerciseId}},
+                {
+                    new: true,
+                    runValidators: true
+                }
+            );
+            return user;
+
+    },
+
 
 
 }
+};
 
 module.exports = resolvers;

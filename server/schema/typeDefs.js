@@ -35,6 +35,7 @@ const typeDefs = gql`
     login(username: String!, password:String): Auth
     addUser(username: String!, firstName: String, lastName: String, password: String): Auth
     saveExercise(input: ExerciseInput): User
+    addExerciseToUser(userId: ID!, exercise: ID!): User
     removeExercise(ExerciseId: String!): User
     addExercise(userId: ID!, exercise: ID!): Exercise
   }
