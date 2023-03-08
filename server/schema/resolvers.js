@@ -70,14 +70,6 @@ const resolvers = {
                             runValidators: true,
                         }
             );
-            // // return User.findOneAndUpdate(
-            //     {_id: userId },
-            //     {$addToSet: {exercises: Exercise.findById(exercise)}},
-            //     {
-            //         new: true,
-            //         runValidators: true
-            //     }
-          //  );
         },
 }
 };

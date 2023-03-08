@@ -5,6 +5,7 @@ import { ADD_EXERCISE } from "../utils/mutations";
 import { QUERY_USERS, QUERY_EXERCISES } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { userData } from "../data/userData";
+import { exerciseData } from "../data/exerciseData";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -13,9 +14,16 @@ import Footer from "../components/Footer";
 
 const AddExercise = () => {
   const users = userData;
+  const exercises = exerciseData;
   // const [usersState, setUsersState] = useState([])
   // const [exercisesState, setExercisesState] = useState([])
-  const [selected , setSelected] = useState()
+const [selectedUser, setSelectedUser] = useState("");
+const [selectedExercise, setSelectedExercise] = useState("");
+
+const test = () => {
+  console.log(selectedUser)
+  console.log(selectedExercise)
+}
 
   // const usersQuery = () => {
   //   const { data } = useQuery(QUERY_USERS);
@@ -30,7 +38,8 @@ const AddExercise = () => {
   // usersQuery()
   // exercisesQuery()
 
-  const  { data }  = useQuery(QUERY_EXERCISES);
+  //  const  { data }  = useQuery(QUERY_EXERCISES);
+  const [addExercise] = useMutation(ADD_EXERCISE);
   //const { datas } = useQuery(QUERY_USERS);
   // if (loading) {
   //   return <div>Loading...</div>;
@@ -49,11 +58,21 @@ const AddExercise = () => {
           <h2 className="text-3xl font-bold mb-2 text-gray-800">
             Assign Exercise
           </h2>
-          <form action="">
+
+          <form onSubmit={(e) => {
+            e.preventDefault();
+             test()
+            addExercise({ variables: { userId: selectedUser, exercise: selectedExercise } });
+          }}>
           <div className="relative w-full lg:max-w-sm">
-            <p>Exercise</p>
-            <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600 m-5">
-              {data?.exercises?.map((exercise) => (
+            <label htmlFor="exercises">Select an exercise</label>
+            <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600 m-5" id="exercises" value={selectedExercise} onChange={(e) => setSelectedExercise(e.target.value)}>
+              {/* {data?.exercises?.map((exercise) => (
+                <option key={exercise._id} value={exercise._id}>
+                  {exercise.name}
+                </option>
+              ))} */}
+              {exercises?.map((exercise) => (
                 <option key={exercise._id} value={exercise._id}>
                   {exercise.name}
                 </option>
@@ -63,8 +82,8 @@ const AddExercise = () => {
           </div>
 
           <div className="relative w-full lg:max-w-sm">
-            <p>Patient</p>
-            <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600 m-5">
+            <label htmlFor="users">Select a patient</label>
+            <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600 m-5" id="users" value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
               {users?.map((user) => (
                 <option key={user._id} value={user._id}>
                   {user.firstName} {user.lastName}
@@ -73,7 +92,7 @@ const AddExercise = () => {
             </select>
           </div>
 
-          <button className="`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5">Assign</button>
+          <button type="submit" className="`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5">Assign</button>
 </form>
 
           

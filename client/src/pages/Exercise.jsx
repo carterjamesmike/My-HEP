@@ -29,7 +29,7 @@ const Exercise = () => {
       </h4>
     );
   }
-
+console.log(user)
   return (
     <main>
       <Navbar />
