@@ -47,9 +47,9 @@ const resolvers = {
             return { token, user };
         },
 
-        saveExercise: async (parent, {name, description, totalDays, url, notes }) =>{
-            const exercise = await Exercise.create({name, description, totalDays, url, notes });
-            return {exercise}; 
+        saveExercise: async (parent, args) =>{
+            const exercise = await Exercise.create(args.input);
+            return exercise; 
         },
         addExercise: async (parent ,{userId, exercise}) => {
            const exerciseData = await Exercise.findById(exercise);
@@ -71,21 +71,6 @@ const resolvers = {
             //     }
           //  );
         },
-        addExerciseToUser: async (parent, {userId, exerciseId}) => {
-            const user = await User.findOneAndUpdate(
-                {_id: userId},
-                {$addToSet: {exercises: exerciseId}},
-                {
-                    new: true,
-                    runValidators: true
-                }
-            );
-            return user;
-
-    },
-
-
-
 }
 };
 

@@ -21,8 +21,7 @@ const typeDefs = gql`
     user: [User]
   }
 
-  input ExerciseInput {
-    _id: String! 
+  input ExerciseInput { 
     name: String
     description: String
     totalDays: Int
@@ -34,8 +33,7 @@ const typeDefs = gql`
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(username: String!, firstName: String, lastName: String, password: String): Auth
-    saveExercise(input: ExerciseInput): User
-    addExerciseToUser(userId: ID!, exercise: ID!): User
+    saveExercise(input: ExerciseInput!): User
     removeExercise(ExerciseId: String!): User
     addExercise(userId: ID!, exercise: ID!): Exercise
   }
