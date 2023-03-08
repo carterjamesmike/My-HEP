@@ -24,7 +24,4 @@
     "url": "https://github.com/carterjamesmike/My-HEP/issues"
   },
   "homepage": "https://github.com/carterjamesmike/My-HEP#readme",
-  "dependencies": {
-    "bcrypt": "^5.1.0"
-  }
 }

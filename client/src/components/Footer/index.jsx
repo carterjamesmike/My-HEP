@@ -2,26 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div>
-  <nav
-    className="flex justify-between mb-2 items-center h-16 bg-white text-black shadow-sm font-mono"
-    role="navigation"
-  >
-    <a href="/" className="pl-8">
-    </a>
-    <div className="pr-8 md:block hidden">
-      <a href="/Home" className="p-4">
-        Home
-      </a>
-      <a href="/Login" className="p-4">
-        Login
-      </a>
-      <a href="/Signup" className="p-4">
-        My Profile
-      </a>
+    <div className="mb-2 h-16 bg-white text-gray-600 shadow-sm font-mono align-items-center;"
+    role="navigation">
+    Copyright © mern baby mern 2023
     </div>
-  </nav>
-  </div>
   )
 };
 
