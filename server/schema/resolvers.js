@@ -17,10 +17,10 @@ const resolvers = {
               }
         },
         users: async () => {
-            return User.find();
+            return User.find().populate('exercises');
         },
         user: async (parent, {username}) => {
-            return User.findOne({username});
+            return User.findOne({username}).populate('exercises');
         }
     },
 
