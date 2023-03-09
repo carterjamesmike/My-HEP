@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { useMutation, useQuery } from "@apollo/client";
 import { ADD_EXERCISE, SAVE_EXERCISE } from "../utils/mutations";
-import { ADD_USER } from "../utils/mutations";
+
 import { QUERY_USERS, QUERY_EXERCISES } from "../utils/queries";
-import { useParams } from "react-router-dom";
-import { userData } from "../data/userData";
-import { exerciseData } from "../data/exerciseData";
+
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -30,27 +28,8 @@ const test = () => {
   console.log(selectedExercise)
 }
 
-  // const usersQuery = () => {
-  //   const { data } = useQuery(QUERY_USERS);
-  //   setUsersState(data)npm 
-  // };
-
-  // const exercisesQuery = () => {
-  //   const { data } = useQuery(QUERY_EXERCISES);
-  //   setExercisesState(data)
-  // };
-
-  // usersQuery()
-  // exercisesQuery()
-
-  //  const  { data }  = useQuery(QUERY_EXERCISES);
   const [addExercise] = useMutation(ADD_EXERCISE);
-  //const { datas } = useQuery(QUERY_USERS);
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-  //console.log(usersState)
-  //console.log(exercisesState)
+
  
 
   return (
@@ -72,11 +51,7 @@ const test = () => {
           <div className="relative w-full lg:max-w-sm">
             <label htmlFor="exercises">Select an exercise</label>
             <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-indigo-600 m-5" id="exercises" value={selectedExercise} onChange={(e) => setSelectedExercise(e.target.value)}>
-              {/* {data?.exercises?.map((exercise) => (
-                <option key={exercise._id} value={exercise._id}>
-                  {exercise.name}
-                </option>
-              ))} */}
+
               {exercises?.map((exercise) => (
                 <option key={exercise._id} value={exercise._id}>
                   {exercise.name}
