@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
-import { ADD_EXERCISE } from "../utils/mutations";
+import { ADD_EXERCISE, SAVE_EXERCISE } from "../utils/mutations";
+import { ADD_USER } from "../utils/mutations";
 import { QUERY_USERS, QUERY_EXERCISES } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { userData } from "../data/userData";
@@ -13,8 +14,12 @@ import Footer from "../components/Footer";
 
 
 const AddExercise = () => {
-  const users = userData;
-  const exercises = exerciseData;
+  const { data: user_data, loading: user_loading, error: user_error } = useQuery(QUERY_USERS);
+  const users = user_data?.users;
+  const { data, loading, error } = useQuery(QUERY_EXERCISES);
+  const exercises = data?.exercises;
+  console.log(exercises);
+  console.log(users);
   // const [usersState, setUsersState] = useState([])
   // const [exercisesState, setExercisesState] = useState([])
 const [selectedUser, setSelectedUser] = useState("");
@@ -27,7 +32,7 @@ const test = () => {
 
   // const usersQuery = () => {
   //   const { data } = useQuery(QUERY_USERS);
-  //   setUsersState(data)
+  //   setUsersState(data)npm 
   // };
 
   // const exercisesQuery = () => {
