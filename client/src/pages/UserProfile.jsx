@@ -16,6 +16,7 @@ const UserProfile = () => {
   });
 
   const user = data?.me || data?.user || {};
+  const exercises = user.exercises
 
   console.log(user);
 
@@ -88,10 +89,18 @@ const UserProfile = () => {
 
 
               <div className="flex justify-center items-center mt-6">
+
+            {exercises.map((exercise) => (
               <Link
               className="bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5"
+              to={`/exercise/${exercise?._id}`}
+              >{exercise.name}</Link>
+            ))}
+
+              {/* <Link
+              className="bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5"
               to={`/exercise/${user?.exercises[0]?._id}`}
-              >{user?.exercises[0]?.name}</Link>
+              >{user?.exercises[0]?.name}</Link> */}
                 {/* <a href="/Exercise">
                   <button
                     className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
@@ -99,10 +108,10 @@ const UserProfile = () => {
                     {user.exercises[0].name}
                   </button>
                 </a> */}
-              <Link
+              {/* <Link
               className="bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5"
               to={`/exercise/${user?.exercises[1]?._id}`}
-              >{user.exercises[1].name}</Link>
+              >{user.exercises[1].name}</Link> */}
               </div>
 
               <div className="flex justify-center items-center mt-6"></div>
