@@ -4,8 +4,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate, Navigate, } from "react-router-dom";
 import auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
-import { useQuery } from "@apollo/client";
-import { QUERY_ME } from "../utils/queries";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -35,9 +33,6 @@ const CreatePatient = () => {
   return (
     <div>
       <Navbar />
-
-
-
       <div className="flex justify-center items-center h-screen bg-blue-100 mt-2">
         <div className="bg-white rounded shadow-2xl p-10">
           <h2 className="text-3xl font-bold mb-2 text-gray-800">

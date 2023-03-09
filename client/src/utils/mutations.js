@@ -39,14 +39,9 @@ export const SAVE_EXERCISE = gql`
     mutation saveExercise($name: String!, $description: String!, $totalDays: Int!, $url: String!, $notes: String) {
         saveExercise(name: $name, description: $description, totalDays: $totalDays, url: $url, notes: $notes) {
             _id
-            name
-            description
-            totalDays
-            url
-            notes
-            user {
+            Exercise {
                 _id
-                username
+                name
             }
         }
     }
