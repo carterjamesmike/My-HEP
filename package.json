@@ -16,10 +16,8 @@
     "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build",
-    "build:server": "tsc",
-    "postinstall": "npm run build"
+    "build": "cd client && npm run build"
+
   },
   "repository": {
     "type": "git",
