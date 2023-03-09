@@ -18,7 +18,7 @@ const CreateExercise = () => {
         variables: {
           name: formData.name,
           description: formData.description,
-          totalDays: formData.totalDays,
+          totalDays: stringToInt(formData.totalDays),
           url: formData.url,
           notes: formData.notes,
         },
@@ -28,6 +28,11 @@ const CreateExercise = () => {
        console.error(e)
     }
   };
+
+  const stringToInt = (str) => {
+    return parseInt(str);
+  };
+
 
   return (
     <main>
@@ -86,7 +91,7 @@ const CreateExercise = () => {
                 <input
                   {...register("totalDays", { required: true })}
                   className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
-                  type="text"
+                  type="number"
                   id="totalDays"
                   placeholder="Total Days"
                   required

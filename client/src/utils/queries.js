@@ -9,7 +9,7 @@ query getExercises {
             totalDays
             url
             notes
-            user {
+            users {
                 _id
                 username
             }
