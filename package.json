@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "npm": "8.x",
+    "node": "16.x"
+  },
   "devDependencies": {
     "concurrently": "^5.3.0"
   },
   "scripts": {
-    "start": "node server/server.js --ignore client",
+    "start": "node server/server.js --ignore client --static-dir=client/dist",
     "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
@@ -23,5 +27,6 @@
   "bugs": {
     "url": "https://github.com/carterjamesmike/My-HEP/issues"
   },
-  "homepage": "https://github.com/carterjamesmike/My-HEP#readme",
+  "homepage": "https://github.com/carterjamesmike/My-HEP#readme"
+
 }

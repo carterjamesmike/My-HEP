@@ -18,10 +18,10 @@ const typeDefs = gql`
     totalDays: Int
     url: String
     notes: String
-    user: [User]
+    users: [User]
   }
 
-  input ExerciseInput {
+  input ExerciseInput { 
     name: String
     description: String
     totalDays: Int
@@ -33,8 +33,9 @@ const typeDefs = gql`
   type Mutation {
     login(username: String!, password: String!): Auth
     addUser(username: String!, firstName: String, lastName: String, password: String): Auth
-    saveExercise(input: ExerciseInput): User
+    saveExercise(name: String!, description: String totalDays: Int, url: String, notes: String): Exercise
     removeExercise(ExerciseId: String!): User
+    addExercise(userId: ID!, exercise: ID!): User
   }
 
   type Query {

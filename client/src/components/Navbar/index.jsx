@@ -9,8 +9,12 @@ const Navbar = () => {
     Auth.logout();
   };
 
+  <header className="sticky top-0 z-50">
+  <Navbar />
+</header>
+
   return (
-    <div className="fixed w-full">
+    <div className="sticky top-0 z-50 fixed w-full">
   <nav
     className="flex justify-between mb-2 items-center h-16 bg-white text-black shadow-sm font-mono"
     role="navigation"

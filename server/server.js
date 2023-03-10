@@ -2,19 +2,10 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
-//const cors = require('cors');
+
 
 const { typeDefs, resolvers } = require('./schema');
 const db = require('./config/connection');
-
-//Enable cors and options
-// const corsOptions = {
-//   origin: 'localhost:5173/Login',
-//   credentials: true,
-//   optionsSuccessStatus: 200
-// };
-
-
 
 const PORT = process.env.PORT || 3001;
 const app = express();

@@ -13,8 +13,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-    mutation addUser($username: String!, $password: String!) {
-        addUser(username: $username, password: $password) {
+    mutation addUser($username: String!, $password: String!, $firstName: String!, $lastName: String!) {
+        addUser(username: $username, password: $password, firstName: $firstName, lastName: $lastName) {
             token
             user {
                 _id
@@ -25,18 +25,21 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_EXERCISE = gql`
-    mutation addExercise($name: String!, $description: String!, $totalDays: Int!, $url: String!, $notes: String) {
-        addExercise(name: $name, description: $description, totalDays: $totalDays, url: $url, notes: $notes) {
+    mutation AddExercise($userId: ID!, $exercise: ID!) {
+        addExercise(userId: $userId, exercise: $exercise) {
+            _id
+            exercises {
+                _id
+            }
+        }
+    }
+`;
+
+export const SAVE_EXERCISE = gql`
+    mutation saveExercise($name: String!, $description: String!, $totalDays: Int!, $url: String!, $notes: String) {
+        saveExercise(name: $name, description: $description, totalDays: $totalDays, url: $url, notes: $notes) {
             _id
             name
-            description
-            totalDays
-            url
-            notes
-            user {
-                _id
-                username
-            }
         }
     }
 `;

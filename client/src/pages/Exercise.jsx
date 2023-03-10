@@ -4,6 +4,7 @@ import { Navigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+<<<<<<< HEAD
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
@@ -16,11 +17,26 @@ const Exercise = () => {
   });
 
   const user = data?.me || data?.user || {};
+=======
+import { QUERY_SINGLE_EXERCISE } from "../utils/queries";
+
+
+const Exercise = () => {
+  
+
+  const { exerciseId } = useParams();
+  const { loading, data } = useQuery(QUERY_SINGLE_EXERCISE, {
+    variables: { exerciseId: exerciseId },
+  });
+
+  const exercise = data?.exercise || {};
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
+<<<<<<< HEAD
   if (!user?.username) {
     return (
       <h4>
@@ -30,10 +46,17 @@ const Exercise = () => {
     );
   }
 
+=======
+  const videoId = exercise.url;
+  const src = `https://www.youtube.com/embed/${videoId}`;  
+  console.log(exerciseId)
+  console.log(videoId)
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
   return (
     <main>
       <Navbar />
       <div>
+<<<<<<< HEAD
         {user?.username === "admin" ? (
           <div className="flex justify-center items-center h-screen bg-blue-100">
             <div className="bg-white rounded shadow-2xl p-10">
@@ -107,6 +130,43 @@ const Exercise = () => {
             </div>
           </div>
         )}
+=======
+       
+          <div className="flex justify-center items-center bg-blue-100 mt-2">
+            <div className="bg-white rounded shadow-2xl p-10">
+              <h2>{exercise.name}</h2>
+
+              <p className="text-gray-600"> </p>
+
+              <h2 className="text-2xl font-bold mb-2 text-gray-800">
+                See the exercise video below!
+              </h2>
+              <div className="flex justify-center items-center mb-8">
+                <iframe
+                  width="560"
+                  height="315"
+                  src={src}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p className="max-w-md mx-auto">
+                <h2>Description of exercise</h2>
+                {exercise.description}
+              </p>
+              <p className="max-w-md mx-auto">
+                <h2>Total day to perform</h2>
+                {exercise.totalDays}
+              </p>
+              <p className="max-w-md mx-auto">
+                <h2>Other notes</h2>
+                {exercise.notes}
+              </p>
+            </div>
+          </div>
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
         <Footer />
       </div>
     </main>
