@@ -8,11 +8,23 @@ Myhep, short for "my home exercise program", is web application that allows user
 
 - React
 - MERN
-- MongoDb
+- MongoDB
 - Express
 - Node
 - Vite
 - Tailwind
+
+## Installation instructions
+
+Execute the following commands to install dependencies, seed the database, and run the application.
+
+```
+npm run install
+
+npm run seed
+
+npm run dev
+```
 
 ## Contributors
 
@@ -23,9 +35,14 @@ Myhep, short for "my home exercise program", is web application that allows user
 
 ## Screenshot
 
-
+![myhep homepage](./client/images/myhepscreenshot.png "myhep home page")
 
 ## Link to deployed application
 
+https://protected-woodland-70982.herokuapp.com/
+
+## Link to GitHub repository
+
+https://github.com/carterjamesmike/My-HEP
 
 
