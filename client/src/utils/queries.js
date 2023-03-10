@@ -63,7 +63,7 @@ export const QUERY_SINGLE_EXERCISE = gql`
             totalDays
             url
             notes
-            user {
+            users {
                 _id
                 username
             }
