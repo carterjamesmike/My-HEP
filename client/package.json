@@ -4,6 +4,10 @@
   "proxy": "http://localhost:3001",
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

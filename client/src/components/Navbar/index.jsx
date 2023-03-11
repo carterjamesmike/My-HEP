@@ -35,12 +35,12 @@ const Navbar = () => {
     {Auth.loggedIn() ? (
       <>
         <div className="pr-8 md:block hidden">
-          <a href="/UserProfile" className="p-4">
-            My Profile
-          </a>
-          <a href="/" onClick={logout} className="p-4">
+          <Link className="p-4" to="UserProfile">My Profile</Link>
+          <Link className="p-4" to="Home" onClick={logout}>Logout</Link>
+
+          {/* <a href="/" onClick={logout} className="p-4">
             Logout
-          </a>
+          </a> */}
         </div>
     {/* Mobile Menu */}
         <ul className={!nav ? 'hidden' : 'absolute bg-blue-100 top-0 left-0 w-full h-screen  flex flex-col justify-center items-center'}>
@@ -64,9 +64,10 @@ const Navbar = () => {
     ) : (
       <>
         <div className="pr-8 md:block hidden">
-          <a href="/Login" className="p-4">
+          {/* <a href="/Login" className="p-4">
             Login
-          </a>
+          </a> */}
+          <Link className="p-4" to="Login">Login</Link>
         </div>  
     {/* Mobile Menu */}
         <ul className={!nav ? 'hidden' : 'absolute bg-blue-100 top-0 left-0 w-full h-screen  flex flex-col justify-center items-center'}>
