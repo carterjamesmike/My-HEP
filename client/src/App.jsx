@@ -10,10 +10,6 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import AddExercise from "./pages/AddExercise";
-<<<<<<< HEAD
-import AdminProfile from "./pages/AdminProfile";
-=======
->>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
 import CreateExercise from "./pages/CreateExercise";
 import CreatePatient from "./pages/CreatePatient";
 import Exercise from "./pages/Exercise";
@@ -55,10 +51,6 @@ function App() {
         <div>
           <Routes>
             <Route path="/AddExercise" element={<AddExercise />} />
-<<<<<<< HEAD
-            <Route path="/AdminProfile" element={<AdminProfile />} />
-=======
->>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
             <Route path="/CreateExercise" element={<CreateExercise />} />
             <Route path="/CreatePatient" element={<CreatePatient />} />
             <Route path="/Exercise/:exerciseId" element={<Exercise />} />
