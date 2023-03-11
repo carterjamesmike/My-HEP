@@ -26,12 +26,12 @@ const Exercise = () => {
   console.log(exerciseId)
   console.log(videoId)
   return (
-    <main>
+    <main className="bg-blue-100">
       <Navbar />
-      <div>
+      <div className="bg-blue-100">
        
           <div className="flex justify-center items-center bg-blue-100 mt-2">
-            <div className="bg-white rounded shadow-2xl p-10">
+            <div className="pt-[55px] bg-blue-100 flex flex-col w-full  h-full rounded shadow-2xl p-10">
               <h2>{exercise.name}</h2>
 
               <p className="text-gray-600"> </p>
@@ -50,6 +50,7 @@ const Exercise = () => {
                   allowfullscreen
                 ></iframe>
               </div>
+              <div className="flex flex-col items-center justify-center">
               <p className="max-w-md mx-auto">
                 <h2>Description of exercise</h2>
                 {exercise.description}
@@ -61,7 +62,9 @@ const Exercise = () => {
               <p className="max-w-md mx-auto">
                 <h2>Other notes</h2>
                 {exercise.notes}
-              </p>
+              </p>                
+              </div>
+
             </div>
           </div>
         <Footer />
