@@ -32,12 +32,6 @@ const Navbar = () => {
       {!nav ? <FaBars /> : <FaTimes />}
     </div>
 
-
-
-
-
-
-
     {Auth.loggedIn() ? (
       <>
         <div className="pr-8 md:block hidden">
