@@ -64,9 +64,10 @@ const Navbar = () => {
     ) : (
       <>
         <div className="pr-8 md:block hidden">
-          <a href="/Login" className="p-4">
+          {/* <a href="/Login" className="p-4">
             Login
-          </a>
+          </a> */}
+          <Link to="Login">My Login</Link>
         </div>  
     {/* Mobile Menu */}
         <ul className={!nav ? 'hidden' : 'absolute bg-blue-100 top-0 left-0 w-full h-screen  flex flex-col justify-center items-center'}>
