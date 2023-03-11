@@ -16,6 +16,9 @@ const UserProfile = () => {
   });
 
   const user = data?.me || data?.user || {};
+  const exercises = user.exercises
+
+  console.log(user);
 
   // redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
@@ -69,7 +72,11 @@ const UserProfile = () => {
                   <button
                     className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
                   >
+<<<<<<< HEAD
+                    Add Exercise
+=======
                     Assign Exercise
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
                   </button>
                 </a>
               </div>
@@ -77,6 +84,22 @@ const UserProfile = () => {
             </div>
           </div>
         ) : (
+<<<<<<< HEAD
+          <div className="flex justify-center items-center h-screen bg-blue-100">
+            <div className="bg-white rounded shadow-2xl p-10">
+              <h2 className="text-3xl font-bold mb-2 text-gray-800">
+                User Profile
+              </h2>
+              <div className="flex justify-center items-center mt-6">
+                <a href="/Exercise">
+                  <button
+                    className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
+                  >
+                    Exercise
+                  </button>
+                </a>
+              </div>
+=======
           <div>
           <div className="flex justify-center items-center h-screen bg-blue-100">
             <div className="bg-white rounded shadow-2xl p-10">
@@ -86,23 +109,17 @@ const UserProfile = () => {
 
 
               <div className="flex justify-center items-center mt-6">
+
+            {exercises.map((exercise) => (
               <Link
               className="bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5"
-              to={`/exercise/${user.exercises[0]._id}`}
-              >{user.exercises[0].name}</Link>
-                {/* <a href="/Exercise">
-                  <button
-                    className={`bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5`}
-                  >
-                    {user.exercises[0].name}
-                  </button>
-                </a> */}
-              <Link
-              className="bg-blue-100 py-2 px-4 text-sm text-grey-200 rounded border border-green focus:outline-none focus:border-green-dark mb-5"
-              to={`/exercise/${user.exercises[1]._id}`}
-              >{user.exercises[1].name}</Link>
+              to={`/exercise/${exercise?._id}`}
+              >{exercise.name}</Link>
+            ))}
+
               </div>
 
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
               <div className="flex justify-center items-center mt-6"></div>
             </div>
           </div> 

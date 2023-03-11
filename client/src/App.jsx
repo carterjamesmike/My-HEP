@@ -10,13 +10,15 @@ import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import AddExercise from "./pages/AddExercise";
+<<<<<<< HEAD
 import AdminProfile from "./pages/AdminProfile";
+=======
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
 import CreateExercise from "./pages/CreateExercise";
 import CreatePatient from "./pages/CreatePatient";
 import Exercise from "./pages/Exercise";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import UserProfile from "./pages/UserProfile";
 
 //Construct our main GraphQL API endpoint
@@ -53,16 +55,17 @@ function App() {
         <div>
           <Routes>
             <Route path="/AddExercise" element={<AddExercise />} />
+<<<<<<< HEAD
             <Route path="/AdminProfile" element={<AdminProfile />} />
+=======
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
             <Route path="/CreateExercise" element={<CreateExercise />} />
             <Route path="/CreatePatient" element={<CreatePatient />} />
             <Route path="/Exercise/:exerciseId" element={<Exercise />} />
             <Route path="/" element={<Home />} />
             <Route path="/Login" element={<Login />} />
-            <Route path="/Signup" element={<Signup />} />
             <Route path="/UserProfile" element={<UserProfile />} />
             <Route path="/Me" element={<UserProfile />} />
-
           </Routes>
         </div>
       </Router>

@@ -52,16 +52,22 @@ const resolvers = {
             return { token, user };
         },
 
-
-        saveExercise: async (parent, args) =>{
-            const exercise = await Exercise.create(args.input);
-            return exercise; 
+        saveExercise: async (parent,{name, description, totalDays, url, notes}) => {
+            const exercise = await Exercise.create({name, description, totalDays, url, notes});
+            return exercise;
         },
+        
+
+        // saveExercise: async (parent, args) =>{
+        //     const exercise = await Exercise.create(args.input);
+        //     return exercise; 
+        // },
 
         //Assigns an exercise to a user
         addExercise: async (parent ,{userId, exercise}) => {
            const exerciseData = await Exercise.findById(exercise);
-           console.log(exerciseData);
+           console.log(exerciseData, "line64");
+           console.log(exercise);
             return await User.findByIdAndUpdate(
                 userId,
                 {$addToSet:{exercises: exerciseData }},

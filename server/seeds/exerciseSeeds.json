@@ -3,20 +3,37 @@
         "name": "Super Streches",
         "description": "Get Some!",
         "totalDays": "1",
+<<<<<<< HEAD
+        "url": "https://www.youtube.com/watch?v=megGOXIJBEE&t=22s",
+=======
         "url": "megGOXIJBEE",
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
         "notes": "It's good for you. I swear"
     },
     {
         "name": "Turtle Pose",
         "description": "Crawl on floor with laundry basket on back.",
         "totalDays": "3",
+<<<<<<< HEAD
+        "url": "https://www.youtube.com/watch?v=J---aiyznGQ",
+=======
         "url": "J---aiyznGQ",
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
         "notes": "Have fun"
     },
     {
         "name": "Wall Sits",
         "description": "Butt on wall",
         "totalDays": "2",
+<<<<<<< HEAD
+        "url": "https://www.youtube.com/watch?v=CMNry4PE93Y&list=PLUNigHjL4wlGV1CaxdCLPJCQiUXLfpG9y&index=8",
+        "notes": "Don't fall over"
+    },{
+        "name": "Contemplation",
+        "description": "What does it all mean?",
+        "totalDays": "4",
+        "url": "https://www.youtube.com/watch?v=OQSNhk5ICTI&list=PLUNigHjL4wlGV1CaxdCLPJCQiUXLfpG9y&index=3",
+=======
         "url": "CMNry4PE93Y",
         "notes": "Don't fall over"
     },
@@ -25,6 +42,7 @@
         "description": "What does it all mean?",
         "totalDays": "4",
         "url": "OQSNhk5ICTI",
+>>>>>>> 9727cc10b2b97c47c55c5250e061814844c322de
         "notes": "Can be done in the bathroom"
     }
 ]
