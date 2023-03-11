@@ -28,7 +28,9 @@ const Exercise = () => {
   return (
     <main className="bg-blue-100">
       <Navbar />
+
       <div className="bg-blue-100">
+
        
           <div className="flex justify-center items-center bg-blue-100 mt-2">
             <div className="pt-[55px] bg-blue-100 flex flex-col w-full  h-full rounded shadow-2xl p-10">
